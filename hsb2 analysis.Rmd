@@ -1,0 +1,19 @@
+---
+title: "hsb2 analysis"
+output: html_notebook
+---
+## Relationship of SES to math score
+```{r}
+library(tidyverse)
+
+hsb2 <- read_csv("hsb2.csv")
+```
+
+This section will look at the relationship of socialeconomic status to math score. I will begain with summary of the math score
+
+```{r}
+hsb2 %>%
+  group_by(ses) %>%
+  summarize(mean(math), median(math), sd(math), min(math), max(math))
+```
+
